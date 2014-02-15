@@ -1,11 +1,12 @@
 class WelcomeController < ApplicationController
-  skip_before_filter :authorize, :except => [:settings]
+  skip_before_filter :authorize
   def index
   end
 
-  def settings
+  def about
   end
 
-  def about
+  def hook
+  	p params
   end
 end

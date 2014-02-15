@@ -52,5 +52,6 @@ end
 gem 'omniauth'
 gem 'omniauth-oauth2'
 gem 'omniauth-yammer'
+gem 'omniauth-hatena'
 
 gem 'rails_12factor', group: :production

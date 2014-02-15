@@ -1,7 +1,6 @@
 Hatebu2Slack::Application.routes.draw do
-  get "welcome/index"
-  get "welcome/settings"
-  get "welcome/about"
+
+  get "/about", :to => 'welcome#about'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -9,7 +8,13 @@ Hatebu2Slack::Application.routes.draw do
   root 'welcome#index'
 
   get '/auth/yammer/callback', :to => 'sessions#create'
+  get '/auth/hatena/callback', :to => 'settings#hatebu'
+  get '/auth/slack/callback', :to => 'settings#slack'
   get "sessions/destroy"
+
+  post '/', :to => 'welcome#hook'
+
+  resource :settings, only: [:edit, :show, :update]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,5 +1,5 @@
 <%# navigation styled for Bootstrap 3.0 %>
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -10,6 +10,7 @@
       </button>
       <%= link_to 'Home', root_path, class: 'navbar-brand' %>
       <% if current_user  %>
+      <%= link_to 'Settings', '/settings/edit', class: 'navbar-brand' %>
       <%= link_to 'Sign out', '/sessions/destroy', class: 'navbar-brand' %>
       <% else%>
       <%= link_to 'Sign in with Yammer', '/auth/yammer', class: 'navbar-brand' %>

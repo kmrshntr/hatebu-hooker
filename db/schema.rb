@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20140215072040) do
     t.string   "name"
     t.string   "email"
     t.string   "yammer_token"
+    t.string   "hatena_id"
+    t.string   "hatena_bookmark_web_hook_key"
     t.string   "slack_token"
     t.datetime "created_at"
     t.datetime "updated_at"
