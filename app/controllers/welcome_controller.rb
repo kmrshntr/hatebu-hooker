@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
+  protect_from_forgery with: :exception, except: ["hook"]
   skip_before_filter :authorize
   def index
   end
@@ -7,6 +8,9 @@ class WelcomeController < ApplicationController
   end
 
   def hook
-  	p params
+    p params
+	respond_to do |format|
+        format.json { head :no_content }
+    end
   end
 end
