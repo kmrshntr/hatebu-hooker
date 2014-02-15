@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Hatebu2Slack::Application.load_tasks
+HatebuHooker::Application.load_tasks

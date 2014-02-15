@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Hatebu2Slack::Application.config.secret_key_base = 'bf9c3da94a7bbe5c12d949f42b03a6efc88495a8d13b7d4e46d474ccf6524620562181349d850830b94bbb96d851188fc98f66faa32527320bc1e1c95d04ac50'
+HatebuHooker::Application.config.secret_key_base = 'bf9c3da94a7bbe5c12d949f42b03a6efc88495a8d13b7d4e46d474ccf6524620562181349d850830b94bbb96d851188fc98f66faa32527320bc1e1c95d04ac50'

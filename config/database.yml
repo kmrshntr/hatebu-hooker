@@ -17,9 +17,8 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: hatebu2slack_development
+  database: hatebu_hooker_development
   pool: 5
-  username: hatebu2slack
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -46,15 +45,13 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: hatebu2slack_test
+  database: hatebu_hooker_test
   pool: 5
-  username: hatebu2slack
   password:
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: hatebu2slack_production
+  database: hatebu_hooker_production
   pool: 5
-  username: hatebu2slack
   password:

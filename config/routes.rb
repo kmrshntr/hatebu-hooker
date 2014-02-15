@@ -1,4 +1,4 @@
-Hatebu2Slack::Application.routes.draw do
+HatebuHooker::Application.routes.draw do
 
   get "/about", :to => 'welcome#about'
   # The priority is based upon order of creation: first created -> highest priority.
