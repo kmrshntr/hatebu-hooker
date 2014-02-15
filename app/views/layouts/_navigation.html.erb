@@ -9,6 +9,11 @@
         <span class="icon-bar"></span>
       </button>
       <%= link_to 'Home', root_path, class: 'navbar-brand' %>
+      <% if current_user  %>
+      <%= link_to 'Sign out', '/sessions/destroy', class: 'navbar-brand' %>
+      <% else%>
+      <%= link_to 'Sign in with Yammer', '/auth/yammer', class: 'navbar-brand' %>
+      <% end %>
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">

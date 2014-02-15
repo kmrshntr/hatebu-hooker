@@ -48,3 +48,9 @@ group :assets do
   gem 'therubyracer'
   gem 'rails_layout'
 end
+
+gem 'omniauth'
+gem 'omniauth-oauth2'
+gem 'omniauth-yammer'
+
+gem 'rails_12factor', group: :production

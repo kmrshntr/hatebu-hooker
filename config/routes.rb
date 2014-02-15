@@ -8,6 +8,9 @@ Hatebu2Slack::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
+  get '/auth/yammer/callback', :to => 'sessions#create'
+  get "sessions/destroy"
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
