@@ -1,1 +1,9 @@
 <%# add navigation links to this file %>
+      <% if current_user  %>
+<li>  <%= link_to 'Settings', '/settings/edit', class: 'navbar-brand' %></li>
+<li>  <%= link_to 'Sign out', '/sessions/destroy', class: 'navbar-brand' %></li>
+      <% else%>
+<li>  <%= link_to 'Sign in with Yammer', '/auth/yammer', class: 'navbar-brand' %></li>
+      <% end %>
+
+
