@@ -10,10 +10,7 @@ class WelcomeController < ApplicationController
   def hook
     if user = User.where(hatena_id: params[:username]).first 
       if user.hatena_bookmark_web_hook_key == params[:key] && params[:status] == "add"
-        conn = Faraday.new(:url => 'https://slack.com')
-        res = conn.get("/api/users.list?token=#{user.slack_token}")
-        members = JSON.parse(res.body)['members']
-        username = members.detect{|member| member['profile']['email'] == user.email}['name']
+        username = user.name
         text = ""
         if params[:comment].present?
           text += params[:comment].to_s + " / "
