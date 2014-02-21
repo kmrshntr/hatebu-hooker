@@ -24,7 +24,7 @@ class WelcomeController < ApplicationController
         if params[:url].present?
           text += params[:url]
         end
-        conn.post '/api/chat.postMessage', { token: user.slack_token, channel: 'G024ZC07C', text: text, username: username}
+        conn.post '/api/chat.postMessage', { token: user.slack_token, channel: 'C024YQKLA', text: text, username: username}
       end
     end
     render text: 'OK'
