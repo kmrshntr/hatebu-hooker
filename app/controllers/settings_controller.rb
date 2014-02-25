@@ -42,7 +42,7 @@ class SettingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:hatena_bookmark_web_hook_key)
+      params.require(:user).permit(:hatena_bookmark_web_hook_key, :include_tags, :exclude_tags)
     end
 end
 

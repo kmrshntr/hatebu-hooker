@@ -8,19 +8,14 @@ class WelcomeController < ApplicationController
   end
 
   def hook
-    if user = User.where(hatena_id: params[:username]).first 
-      if user.hatena_bookmark_web_hook_key == params[:key] && params[:status] == "add"
-        conn = Faraday.new(:url => 'https://slack.com')
+    if user = User.where(hatena_id: params[:username]).first
+      if user.can_post?(params[:key], params[:status], params[:comment].to_s)
         text = ""
-        if params[:comment].present?
-          text += params[:comment].to_s + " / "
-        end
-        if params[:title].present?
-          text += '"' + params[:title]+'" '
-        end
-        if params[:url].present?
-          text += params[:url]
-        end
+        text += "#{params[:comment]} / " if params[:comment].present?
+        text += "\"#{params[:title]}\"" if params[:title].present?
+        text += params[:url] if params[:url].present?
+
+        conn = Faraday.new(:url => 'https://slack.com')
         conn.post '/api/chat.postMessage', { token: user.slack_token, channel: 'C024YQKLA', text: text, username: user.name}
       end
     end
